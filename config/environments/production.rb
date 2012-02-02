@@ -19,8 +19,12 @@ SampleApp::Application.configure do
 
   # Generate digests for assets URLs
   config.assets.digest = true
+  
+  # Force all access to the app over SSL, use Strict-Transport-Security, 
+    # and use secure cookies.
+    config.force_ssl = true
 
-  config.assets.precompile += %w( blueprint/screen.css blueprint/print.css blueprint/ie.css custom.css )
+  config.assets.precompile += %w[ blueprint/*.css custom.css ]
 
   # Defaults to Rails.root.join("public/assets")
   # config.assets.manifest = YOUR_PATH
